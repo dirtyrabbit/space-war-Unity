@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class Fighter : MonoBehaviour
 {
     public LineRenderer[] laser;
     public GameObject UI;
+    public GameObject TIME;
     bool isDeath = false;
 
     private void LateUpdate()
@@ -16,7 +18,9 @@ public class Fighter : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         isDeath = true;
+        GameObject.Find("Time").GetComponent<TimeText>().Pause(); // 停止計時
         UI.SetActive(true);
+        
     }
     public void Replay()
     {
@@ -37,6 +41,7 @@ public class Fighter : MonoBehaviour
             if (rocky.hp <= 0)
             {
                 Destroy(hit.transform.gameObject);
+                GameObject.Find("Score").GetComponent<ScoreText>().DestoryRocky(); // 加分
             }
             for (int i = 0; i < laser.Length; i++)
             {
