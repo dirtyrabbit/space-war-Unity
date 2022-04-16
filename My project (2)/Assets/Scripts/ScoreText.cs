@@ -23,7 +23,10 @@ public class ScoreText : MonoBehaviour
         //顯示(更變text的文字)
         GetComponent<Text>().text = "Score: " + currScore.ToString();
     }
-
+    public int getScore()
+    {
+        return currScore;
+    }
     public void DestoryRocky()
     {
         AddScoreAndDisplay();

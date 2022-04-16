@@ -1,5 +1,6 @@
 sceneSetups:
-- path: Assets/Scenes/Start Scene.unity
+- path: Assets/ThirdParty/Ultraleap/Tracking/Examples/Core Examples/Capsule Hands
+    (Desktop).unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
